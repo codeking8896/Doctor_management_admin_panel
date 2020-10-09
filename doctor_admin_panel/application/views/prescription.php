@@ -66,7 +66,15 @@
                                             foreach ( $info as $data ) :
                                             ?>
 
-                                       
+                                        <tr>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $data['date']; ?></td>
+                                            <td><?php echo $data['p_name']; ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url('user/print_prescription')."/".$data['prescription_id'];?>"><button type="button" class="btn btn-1d btn-sm btn-outline-primary waves-effect waves-light">Print Prescription</button></a>
+                                                <a href="<?php echo base_url('user_operation/deleteprescription')."/".$data['prescription_id'];?>"><button type="button" class="btn btn-1d btn-sm btn-outline-primary waves-effect waves-light"><i class="fa fa-trash-o"></i></button></a>
+                                            </td>
+                                        </tr>
                                             <?php 
                                                 $i++;
                                             endforeach; 
@@ -105,3 +113,4 @@
         <!-- Datatable init js -->
         <script src="<?php echo base_url(); ?>assets/pages/datatables.init.js"></script>
 <?php include('includes/footer_end.php');?>
+
